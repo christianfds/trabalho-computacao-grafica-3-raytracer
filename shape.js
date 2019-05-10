@@ -43,3 +43,30 @@ class Sphere {
     return point.minus(this.center).normalized();
   }
 }
+
+class Plane {
+  constructor(center, normal, material) {
+    this.center = center;
+    this.normal = normal;
+    this.material = material;
+  }
+
+  getIntersection(ray) {
+    const n = this.normal.minus(this.center);
+    const v = ray.direction.minus(ray.origin); 
+
+    if(v.dot(n) == 0){
+      // no intersection
+      return null;
+    }
+
+    const t = -ray.origin.dot(n) / v.dot(n);
+
+    return t;
+  }
+
+  normalAt(point) {
+    return this.normal.minus(this.center).plus(point).normalized();
+    // return point.minus(this.center).normalized();
+  }
+}

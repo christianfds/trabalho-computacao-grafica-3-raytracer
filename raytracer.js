@@ -1,4 +1,4 @@
-const MAX_BOUNCES = 3;
+const MAX_BOUNCES = 2;
 const NUM_SAMPLES_PER_DIRECTION = 2;
 const NUM_SAMPLES_PER_PIXEL =
   NUM_SAMPLES_PER_DIRECTION * NUM_SAMPLES_PER_DIRECTION;
@@ -197,6 +197,8 @@ class RayTracer {
   }
 }
 
+// const WIDTH = 800;
+// const HEIGHT = 600;
 const WIDTH = 256;
 const HEIGHT = 192;
 
@@ -222,6 +224,19 @@ const SCENE = {
     }
   ],
   objects: [
+    // new Plane(
+    //   new Vector3(0, 0, -3),
+    //   new Vector3(0, 1, 0),
+    //   // new Vector3(0.0, -0.1, -1.5),
+    //   {
+    //     ka: new Color(0.1, 0.1, 0.1),
+    //     kd: new Color(0.5, 0.5, 0.9),
+    //     ks: new Color(0.7, 0.7, 0.7),
+    //     alpha: 20,
+    //     kr: new Color(0.1, 0.1, 0.2)
+
+    //   }
+    // ),
     new Sphere(
       new Vector3(-1.1, 0.6, -1),
       0.2,
